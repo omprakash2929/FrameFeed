@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+python-multipart
+aiofiles
+reportlab
+Pillow
+imageio-ffmpeg
+ImageHash

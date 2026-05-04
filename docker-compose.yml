@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  backend:
+    image: omprakash2929/framefeed-backend:latest
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount a temp directory for video processing relative to the project
+      - ./tmp:/tmp
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  frontend:
+    image: omprakash2929/framefeed-frontend:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - BACKEND_URL=http://backend:8000
+    depends_on:
+      - backend

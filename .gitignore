@@ -1,0 +1,22 @@
+# Node
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env*
+frontend/*.tsbuildinfo
+
+# Python
+backend/__pycache__/
+backend/*.pyc
+backend/.pytest_cache/
+.venv/
+venv/
+env/
+
+# App specific
+tmp/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
