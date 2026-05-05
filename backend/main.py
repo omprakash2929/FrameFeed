@@ -25,7 +25,8 @@ if env_origins:
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins,
-    allow_origin_regex="https?://.*\.render\.com", # Allow all render apps by default for convenience
+    # Allow all Render and Vercel subdomains for easier deployment
+    allow_origin_regex="https?://.*\.render\.com|https?://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
